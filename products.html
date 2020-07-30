@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ohits Products</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/products.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        
+    </head>
+    <body>
+
+        <!-- Navigation -->
+            <nav class="navbar bg-dark navbar-light navbar-expand-lg sticky-top">
+                <div class="container">
+                    
+                    <a href="index.html" class="navbar-brand"><img src="img\IMG-6761(v9).PNG" alt=""></a>
+                
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
+                            <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+
+        <div class="contact-section">
+            <section>
+                <div class="container">
+                    <h1>OHITS PRODUCTS</h1>
+                    <h2>Coming Soon</h2>
+    
+                    <div class="count">
+                        <div class="countd">
+                            <span id ="days">00</span>
+                            DAYS
+                        </div>                        
+                            <div class="countd">
+                                <span id ="hours">00</span>
+                                HOURS
+                            </div>
+                            
+                            <div class="countd">
+                                <span id ="minutes">00</span>
+                                MINUTES
+                            </div>
+                            
+                            <div class="countd">
+                                <span id ="seconds">00</span>
+                                SECONDS
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+
+
+
+        
+
+	<!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+
+            <script type="text/javascript">
+
+                var count = new Date("oct 31,2020 00:00:00").getTime();
+                var x = setInterval(function(){
+                    var now = new Date().getTime();
+                    var d = count - now;
+
+                    var days = Math.floor(d/(1000*60*60*24));
+                    var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+                    var minutes = Math.floor((d%(1000*60*60*24))/(1000*60));
+                    var seconds = Math.floor((d%(1000*60*60*24))/(1000));
+
+                    document.getElementById("days").innerHTML = days
+                    document.getElementById("hours").innerHTML = hours
+                    document.getElementById("minutes").innerHTML = minutes
+                    document.getElementById("seconds").innerHTML = seconds
+
+                    if(d <= 0){
+                        clearInterval(x);
+                    }
+                },1000)
+
+            </script>
+
+
+<script type="text/javascript">
+                // <![CDATA[  <-- For SVG support
+                if ('WebSocket' in window) {
+                    (function () {
+                        function refreshCSS() {
+                            var sheets = [].slice.call(document.getElementsByTagName("link"));
+                            var head = document.getElementsByTagName("head")[0];
+                            for (var i = 0; i < sheets.length; ++i) {
+                                var elem = sheets[i];
+                                var parent = elem.parentElement || head;
+                                parent.removeChild(elem);
+                                var rel = elem.rel;
+                                if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                                    var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                                    elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                                }
+                                parent.appendChild(elem);
+                            }
+                        }
+                        var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                        var address = protocol + window.location.host + window.location.pathname + '/ws';
+                        var socket = new WebSocket(address);
+                        socket.onmessage = function (msg) {
+                            if (msg.data == 'reload') window.location.reload();
+                            else if (msg.data == 'refreshcss') refreshCSS();
+                        };
+                        if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                            console.log('Live reload enabled.');
+                            sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                        }
+                    })();
+                }
+                else {
+                    console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+                }
+                // ]]>
+</script>
+    </body>
+</html>
